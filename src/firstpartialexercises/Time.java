@@ -13,13 +13,14 @@ public class Time {
     private int hour;
     private int minute;
     private int second;
-    
+    //Constructor
     public Time(int hour, int minute, int second)
     {
         this.hour=hour;
         this.minute=minute;
         this.second=second;
     }
+    //Getter
     public int getHour()
     {
         return this.hour;
@@ -32,55 +33,18 @@ public class Time {
     {
         return this.second;
     }
+    //Setters
     public void setHour(int hour)
     {
-        switch (hour)
-        {
-            case 24:
-                System.out.println("New day!");
-                this.hour=0;
-                break;
-            case -1:
-                this.hour=23;
-                break;
-            default:
-                this.hour=hour;
-                break;
-        }
+        this.hour=hour;
     }
     public void setMinute(int minute)
     {
-        switch (minute)
-        {
-            case 60:
-                this.setHour(this.getHour()+1);
-                this.minute=0;
-                break;
-            case -1:
-                this.setHour(this.getHour()-1);
-                this.minute=59;
-                break;
-            default:
-                this.minute=minute;
-                break;
-        }
+        this.minute=minute;
     }
     public void setSecond(int second)
     {
-        switch (second)
-        {
-            case 60:
-                this.setMinute(this.getMinute()+1);
-                this.second=0;
-                break;
-            case -1:
-                this.setMinute(this.getMinute()-1);
-                this.second=59;
-                break;
-            default:
-                this.second=second;
-                break;
-        }
+        this.second=second;
     }
     public void setTime(int hour, int minute, int second)
     {
@@ -88,19 +52,49 @@ public class Time {
         this.minute=minute;
         this.second=second;
     }
+    //Methods
     @Override
     public String toString()
     {
         return String.format("%02d",this.hour)+":"+String.format("%02d",this.minute)+":"+String.format("%02d",this.second);
     }
-    public Time nextSecond()
+    public Time nextSecond() //Adds a second, then checks for the "limit" of the time format.
     {
-        this.setSecond(this.second+1);
+        this.second++;
+        if(this.second==60)
+        {
+            this.second=0;
+            this.minute++;
+        }
+        if(this.minute==60)
+        {
+            this.minute=0;
+            this.hour++;
+        }
+        if(this.hour==24)
+        {
+            this.hour=0;
+            System.out.println("New day!");
+        }
         return this;
     }
-    public Time previousSecond()
+    public Time previousSecond() //Substracts a second, then checks for the "limit" of the time format.
     {
-        this.setSecond(this.getSecond()-1);
+        this.second--;
+        if(this.second==-1)
+        {
+            this.second=59;
+            this.minute--;
+        }
+        if(this.minute==-1)
+        {
+            this.minute=59;
+            this.hour--;
+        }
+        if(this.hour==-1)
+        {
+            this.hour=23;
+        }
         return this;
     }
 }
