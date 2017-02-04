@@ -12,6 +12,7 @@ package firstpartialexercises;
 public class Rectangle {
     private float length;
     private float width;
+    //Constructors
     public Rectangle()
     {
         length=1.0f;
@@ -22,22 +23,25 @@ public class Rectangle {
         this.length=length;
         this.width=width;
     }
+    //Getters
     public float getLength()
     {
         return this.length;
-    }
-    public void setLength(float length)
-    {
-        this.length=length;
     }
     public float getWidth()
     {
         return this.width;
     }
+    //Setters
     public void setWidth(float width)
     {
         this.width=width;
     }
+    public void setLength(float length)
+    {
+        this.length=length;
+    }
+    //Methods
     public double getArea()
     {
         double a=width*length;
