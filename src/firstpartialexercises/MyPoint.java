@@ -51,14 +51,15 @@ public class MyPoint{
     {
         this.y=y;
     }
+    //Methods
     @Override
     public String toString()
     {
         return "("+this.x+","+this.y+")";
     }
-    public double distance(int x, int y)
+    public double distance(int x, int y) //Uses the "Distance between to points" formula
     {
-        return Math.sqrt(Math.pow(x-this.x,2)+Math.pow(y-this.y,2));
+        return Math.sqrt(Math.pow(x-this.x,2)+Math.pow(y-this.y,2)); //Square root of [(X2-X1)^2 +(Y2-Y1)^2]
     }
     public double distance(MyPoint another)
     {
