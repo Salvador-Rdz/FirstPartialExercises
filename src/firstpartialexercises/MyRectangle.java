@@ -48,11 +48,11 @@ public class MyRectangle {
     //Methods
     public double getPerimeter()
     {
-        int a=c1.getX()-c2.getX();
+        int a=c1.getX()-c2.getX();//Gets the distance between corners
         int b=c1.getY()-c2.getY();
-        return Math.abs((a*2)*(b*2));
+        return Math.abs((a*2)*(b*2)); //Then multiplies the sides for 2 and then for each other, getting them as absolutes
     }
-    public double getArea()
+    public double getArea() //Gets the absolute value of the distance between corners, then multiplies them.
     {
         return Math.abs(c1.getX()-c2.getX())*(c1.getY()-c2.getY());
     }
