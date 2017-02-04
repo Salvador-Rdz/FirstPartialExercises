@@ -16,9 +16,9 @@ public class Date {
     //Constructors
     public Date(int day, int month, int year)
     {
-        //The constructor uses the setters to validate the values.
-        setDay(day);
-        setMonth(month);
+        //The constructor uses the setters to validate the values. (Messy, but works)
+        setDay(day); //An alternative would be to validate them here, but it would add extra code
+        setMonth(month); 
         setYear(year);
     }
     //Getters
@@ -69,13 +69,13 @@ public class Date {
             this.year = year;
         }
     }
+    //Methods
     public void setDate(int day, int month, int year)
     {
         setDay(day);
         setMonth(month);
         setYear(year);
     }
-    //Methods
     @Override
     public String toString()
     {
