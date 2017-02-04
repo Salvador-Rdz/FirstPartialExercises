@@ -37,20 +37,20 @@ public class MyTriangle {
     }
     public String getType()
     {
-        double a=v1.distance(v2);
+        double a=v1.distance(v2);//Gets the sides
         double b=v1.distance(v3);
         double c=v2.distance(v3);
-        if(a==b && a==c)
+        if(a==b && a==c && c==b) //If they're all equal, then its an equilateral.
         {
             return "Equilateral";
         }
         else
         {
-            if(a!=b && a!=c)
+            if(a!=b && a!=c && c!=b) //If they're all different, then its a scalene.
             {
                 return "Scalene";
             }
-            else
+            else                    //If it doesn't meet any of the other conditions, then its an isosceles.
             {
                 return "Isosceles";
             }
