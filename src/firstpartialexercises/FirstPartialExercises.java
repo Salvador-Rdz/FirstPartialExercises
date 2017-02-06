@@ -17,8 +17,13 @@ public class FirstPartialExercises {
     public static void main(String[] args) {
         //MyCircle b = new MyCircle ();
         //System.out.println(b.toString());
-        Date d = new Date(1,121,1993);
-        System.out.println(""+d.toString());
+        //Date d = new Date(1,121,1993);
+        //System.out.println(""+d.toString());
+        Time a = new Time(23,59,59);
+        a.nextSecond();
+        System.out.println(a.toString());
+        a.previousSecond();
+        System.out.println(a.toString());
     }
     
 }
